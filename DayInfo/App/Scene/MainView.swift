@@ -9,26 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("홈")
-                }
-            
-            CalendarView()
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("일정")
-                }
-            
-            SettingView()
-                .tabItem {
-                    Image(systemName: "gearshape")
-                    Text("설정")
-                }
-        }
-    }
+        HomeView()
 }
 
 struct MainView_Previews: PreviewProvider {
