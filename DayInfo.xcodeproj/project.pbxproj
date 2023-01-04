@@ -14,7 +14,7 @@
 		885493732965EC7C00B14B73 /* WeatherAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493722965EC7C00B14B73 /* WeatherAPIService.swift */; };
 		885493762965FAEF00B14B73 /* TodoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493752965FAEF00B14B73 /* TodoGridItemView.swift */; };
 		88549378296608EC00B14B73 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88549377296608EC00B14B73 /* Extension+Color.swift */; };
-		8854937A29660E4300B14B73 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854937929660E4300B14B73 /* APIKey.swift */; };
+		8877D9182966113A00B29F1D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877D9172966113A00B29F1D /* APIKey.swift */; };
 		8878A45029617414005F7E15 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A44F29617414005F7E15 /* Constant.swift */; };
 		8878A4522961789B005F7E15 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A4512961789B005F7E15 /* WeatherView.swift */; };
 		8878A45629618103005F7E15 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A45529618103005F7E15 /* DayView.swift */; };
@@ -41,7 +41,7 @@
 		885493722965EC7C00B14B73 /* WeatherAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIService.swift; sourceTree = "<group>"; };
 		885493752965FAEF00B14B73 /* TodoGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoGridItemView.swift; sourceTree = "<group>"; };
 		88549377296608EC00B14B73 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
-		8854937929660E4300B14B73 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		8877D9172966113A00B29F1D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8878A44F29617414005F7E15 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8878A4512961789B005F7E15 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		8878A45529618103005F7E15 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8878A44F29617414005F7E15 /* Constant.swift */,
-				8854937929660E4300B14B73 /* APIKey.swift */,
+				8877D9172966113A00B29F1D /* APIKey.swift */,
 				88549377296608EC00B14B73 /* Extension+Color.swift */,
 			);
 			path = Utility;
@@ -288,7 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				885493692965E92F00B14B73 /* HomeViewModel.swift in Sources */,
-				8854937A29660E4300B14B73 /* APIKey.swift in Sources */,
+				8877D9182966113A00B29F1D /* APIKey.swift in Sources */,
 				885493732965EC7C00B14B73 /* WeatherAPIService.swift in Sources */,
 				88CE22B7295EFB6F0078A6CB /* HomeView.swift in Sources */,
 				88DC7F2D2961AB6400401BB9 /* ColorGridView.swift in Sources */,
