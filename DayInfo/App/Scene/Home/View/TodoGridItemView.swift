@@ -10,28 +10,32 @@ import SwiftUI
 struct TodoGridItemView: View {
     
     @State var task = false
-    let todo: Todo
+    @Environment(\.managedObjectContext) var viewContext
+    @ObservedObject var item: Item
     
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
-            Image(systemName: task ? "checkmark.\(todo.icon)" : todo.icon)
+            Image(systemName: item.done ? "checkmark.circle" : "circle")
+                .resizable()
                 .scaledToFit()
-                .imageScale(.large)
-                .foregroundColor(Color.init(hex: todo.color))
+                .frame(width: 30, height: 30)
+                .foregroundColor(Color.init(hex: item.color ?? "#000000"))
+                .padding(.leading, 12)
                 .onTapGesture {
-                    task.toggle()
-                    TodoRepository.shared.updateDone(task, todo: todo)
+                    item.done.toggle()
+                    try? self.viewContext.save()
+                    feedback.impactOccurred()
                 }
             
             VStack(alignment: .center, spacing: 8) {
-                Text(todo.title)
-                    .strikethrough(todo.done, color: .init(hex: todo.color))
+                Text(item.title ?? "")
+                    .strikethrough(item.done, color: .init(hex: item.color ?? "#000000"))
                     .font(.system(size: 18))
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                     .lineLimit(1)
                 
-                Text("D-5")
+                Text(calculateDate(date: item.date ?? Date()))
                     .font(.system(size: 15, design: .rounded))
                     .fontWeight(.medium)
                     .foregroundColor(.black)
@@ -41,17 +45,14 @@ struct TodoGridItemView: View {
         .padding()
         .frame(width: gridSize, height: gridSize / 2)
         .background(Color.white.cornerRadius(12))
-        .background(RoundedRectangle(cornerRadius: 12).stroke(Color.init(hex: todo.color), lineWidth: 3))
-        .onAppear {
-            task = todo.done
-        }
+        .background(RoundedRectangle(cornerRadius: 12).stroke(Color.init(hex: item.color ?? "#000000"), lineWidth: 3))
     }
 }
 
-struct TodoGridItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoGridItemView(todo: sampleTodo)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+//struct TodoGridItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoGridItemView()
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//    }
+//}

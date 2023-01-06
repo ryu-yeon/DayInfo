@@ -8,54 +8,54 @@
 import SwiftUI
 
 struct TodoItemView: View {
-    
-    @State private var task = false
-    
-    let todo: Todo
+        
+    @Environment (\.managedObjectContext) var viewContext
+    @ObservedObject var item: Item
     
     var body: some View {
         
         HStack(alignment: .center, spacing: 16) {
             VStack(alignment: .center, spacing: 8) {
-                Image(systemName: task ? "checkmark.\(todo.icon)" : todo.icon)
+                Image(systemName: item.done ? "checkmark.circle" : "circle")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 30, height: 30)
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.init(hex: todo.color))
+                    .foregroundColor(Color.init(hex: item.color ?? "#000000"))
                     .offset(y: 4)
                     .onTapGesture {
-                        task.toggle()
-                        TodoRepository.shared.updateDone(task, todo: todo)
+                        item.done.toggle()
+                        try? self.viewContext.save()
+                        feedback.impactOccurred()
                     }
                 
-                Text("D-5")
-                    .font(.system(size: 20, design: .rounded))
+                Text(calculateDate(date: item.date ?? Date()))
+                    .font(.system(size: 12, design: .rounded))
+                    .frame(maxWidth: 60)
             }
+            
             VStack(alignment: .leading, spacing: 8) {
     
-                Text(todo.title)
-                    .strikethrough(todo.done, color: .init(hex: todo.color))
+                Text(item.title ?? "")
+                    .strikethrough(item.done, color: .init(hex: item.color ?? "#000000"))
                     .font(.headline)
                     .fontWeight(.heavy)
+                    .lineLimit(1)
                 
-                Text(todo.detail)
+                Text(item.content ?? "")
                     .font(.footnote)
                     .fontWeight(.light)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
             }
         }
-        .onAppear {
-            task = todo.done
-        }
     }
 }
 
-struct TodoItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoItemView(todo: sampleTodo)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+//struct TodoItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoItemView(item: <#Item#>)
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//    }
+//}

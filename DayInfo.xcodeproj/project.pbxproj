@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		885493672965E8B800B14B73 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493662965E8B800B14B73 /* TodoRepository.swift */; };
 		885493692965E92F00B14B73 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493682965E92F00B14B73 /* HomeViewModel.swift */; };
 		8854936D2965EC2B00B14B73 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8854936C2965EC2B00B14B73 /* Moya */; };
 		885493702965EC3200B14B73 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854936E2965EC3200B14B73 /* WeatherAPI.swift */; };
 		885493732965EC7C00B14B73 /* WeatherAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493722965EC7C00B14B73 /* WeatherAPIService.swift */; };
 		885493762965FAEF00B14B73 /* TodoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493752965FAEF00B14B73 /* TodoGridItemView.swift */; };
 		88549378296608EC00B14B73 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88549377296608EC00B14B73 /* Extension+Color.swift */; };
+		88748AF4296775A2008F7CD5 /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88748AF2296775A2008F7CD5 /* Todo.xcdatamodeld */; };
+		88748AF6296775C7008F7CD5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88748AF5296775C7008F7CD5 /* Persistence.swift */; };
 		8877D9182966113A00B29F1D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877D9172966113A00B29F1D /* APIKey.swift */; };
 		8878A45029617414005F7E15 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A44F29617414005F7E15 /* Constant.swift */; };
 		8878A4522961789B005F7E15 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A4512961789B005F7E15 /* WeatherView.swift */; };
@@ -24,23 +25,22 @@
 		88CE22B7295EFB6F0078A6CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22B6295EFB6F0078A6CB /* HomeView.swift */; };
 		88CE22B9295EFB700078A6CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CE22B8295EFB700078A6CB /* Assets.xcassets */; };
 		88CE22BC295EFB700078A6CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CE22BB295EFB700078A6CB /* Preview Assets.xcassets */; };
-		88CE22C6295EFC390078A6CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22C5295EFC390078A6CB /* MainView.swift */; };
 		88CE22D1295F04100078A6CB /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22D0295F04100078A6CB /* TodoItemView.swift */; };
-		88CE22D3295F315C0078A6CB /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22D2295F315C0078A6CB /* TodoModel.swift */; };
 		88CE22DA295F65DF0078A6CB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 88CE22D9295F65DF0078A6CB /* Alamofire */; };
 		88CE22DC295F67A40078A6CB /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22DB295F67A40078A6CB /* WeatherModel.swift */; };
 		88DC7F2D2961AB6400401BB9 /* ColorGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC7F2C2961AB6400401BB9 /* ColorGridView.swift */; };
-		88DC7F322962192700401BB9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 88DC7F312962192700401BB9 /* Realm */; };
-		88DC7F342962192700401BB9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 88DC7F332962192700401BB9 /* RealmSwift */; };
+		88F0193229689BBE006A5826 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0193129689BBE006A5826 /* AddTodoView.swift */; };
+		88F019352968B084006A5826 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F019342968B084006A5826 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		885493662965E8B800B14B73 /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		885493682965E92F00B14B73 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8854936E2965EC3200B14B73 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		885493722965EC7C00B14B73 /* WeatherAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIService.swift; sourceTree = "<group>"; };
 		885493752965FAEF00B14B73 /* TodoGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoGridItemView.swift; sourceTree = "<group>"; };
 		88549377296608EC00B14B73 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		88748AF3296775A2008F7CD5 /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
+		88748AF5296775C7008F7CD5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8877D9172966113A00B29F1D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8878A44F29617414005F7E15 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8878A4512961789B005F7E15 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -52,11 +52,11 @@
 		88CE22B6295EFB6F0078A6CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		88CE22B8295EFB700078A6CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88CE22BB295EFB700078A6CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		88CE22C5295EFC390078A6CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		88CE22D0295F04100078A6CB /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
-		88CE22D2295F315C0078A6CB /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		88CE22DB295F67A40078A6CB /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		88DC7F2C2961AB6400401BB9 /* ColorGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGridView.swift; sourceTree = "<group>"; };
+		88F0193129689BBE006A5826 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		88F019342968B084006A5826 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88DC7F342962192700401BB9 /* RealmSwift in Frameworks */,
-				88DC7F322962192700401BB9 /* Realm in Frameworks */,
 				8854936D2965EC2B00B14B73 /* Moya in Frameworks */,
 				88CE22DA295F65DF0078A6CB /* Alamofire in Frameworks */,
 			);
@@ -74,14 +72,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8854936A2965E97B00B14B73 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				885493662965E8B800B14B73 /* TodoRepository.swift */,
-			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
 		885493742965ED3C00B14B73 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				885493742965ED3C00B14B73 /* Network */,
-				8854936A2965E97B00B14B73 /* Realm */,
 				8878A44E29616E46005F7E15 /* Utility */,
 				88CE22C4295EFBA40078A6CB /* Model */,
 				88CE22C2295EFB820078A6CB /* App */,
@@ -160,9 +149,10 @@
 		88CE22C3295EFB8C0078A6CB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				88CE22C5295EFC390078A6CB /* MainView.swift */,
 				88CE22CC295F01A60078A6CB /* Home */,
 				8878A459296188C9005F7E15 /* TodoDetail */,
+				88F0193329689BC0006A5826 /* AddTodo */,
+				88F019362968B087006A5826 /* Setting */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -170,8 +160,9 @@
 		88CE22C4295EFBA40078A6CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				88CE22D2295F315C0078A6CB /* TodoModel.swift */,
 				88CE22DB295F67A40078A6CB /* WeatherModel.swift */,
+				88748AF5296775C7008F7CD5 /* Persistence.swift */,
+				88748AF2296775A2008F7CD5 /* Todo.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +197,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		88F0193329689BC0006A5826 /* AddTodo */ = {
+			isa = PBXGroup;
+			children = (
+				88F0193129689BBE006A5826 /* AddTodoView.swift */,
+			);
+			path = AddTodo;
+			sourceTree = "<group>";
+		};
+		88F019362968B087006A5826 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				88F019342968B084006A5826 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,8 +231,6 @@
 			name = DayInfo;
 			packageProductDependencies = (
 				88CE22D9295F65DF0078A6CB /* Alamofire */,
-				88DC7F312962192700401BB9 /* Realm */,
-				88DC7F332962192700401BB9 /* RealmSwift */,
 				8854936C2965EC2B00B14B73 /* Moya */,
 			);
 			productName = DayInfo;
@@ -258,7 +263,6 @@
 			mainGroup = 88CE22A8295EFB6F0078A6CB;
 			packageReferences = (
 				88CE22D8295F65DE0078A6CB /* XCRemoteSwiftPackageReference "Alamofire" */,
-				88DC7F302962192700401BB9 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				8854936B2965EC2A00B14B73 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 88CE22B2295EFB6F0078A6CB /* Products */;
@@ -288,22 +292,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				885493692965E92F00B14B73 /* HomeViewModel.swift in Sources */,
+				88F019352968B084006A5826 /* SettingView.swift in Sources */,
 				8877D9182966113A00B29F1D /* APIKey.swift in Sources */,
 				885493732965EC7C00B14B73 /* WeatherAPIService.swift in Sources */,
+				88748AF6296775C7008F7CD5 /* Persistence.swift in Sources */,
 				88CE22B7295EFB6F0078A6CB /* HomeView.swift in Sources */,
 				88DC7F2D2961AB6400401BB9 /* ColorGridView.swift in Sources */,
 				8878A45629618103005F7E15 /* DayView.swift in Sources */,
-				88CE22D3295F315C0078A6CB /* TodoModel.swift in Sources */,
 				8878A4522961789B005F7E15 /* WeatherView.swift in Sources */,
 				88549378296608EC00B14B73 /* Extension+Color.swift in Sources */,
-				88CE22C6295EFC390078A6CB /* MainView.swift in Sources */,
 				8878A45829618255005F7E15 /* CoverView.swift in Sources */,
+				88748AF4296775A2008F7CD5 /* Todo.xcdatamodeld in Sources */,
 				885493762965FAEF00B14B73 /* TodoGridItemView.swift in Sources */,
 				885493702965EC3200B14B73 /* WeatherAPI.swift in Sources */,
 				88CE22D1295F04100078A6CB /* TodoItemView.swift in Sources */,
 				88CE22B5295EFB6F0078A6CB /* DayInfoApp.swift in Sources */,
 				8878A45B29618986005F7E15 /* TodoDetailView.swift in Sources */,
-				885493672965E8B800B14B73 /* TodoRepository.swift in Sources */,
+				88F0193229689BBE006A5826 /* AddTodoView.swift in Sources */,
 				88CE22DC295F67A40078A6CB /* WeatherModel.swift in Sources */,
 				8878A45029617414005F7E15 /* Constant.swift in Sources */,
 			);
@@ -524,14 +529,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		88DC7F302962192700401BB9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = exactVersion;
-				version = 10.33.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -545,17 +542,20 @@
 			package = 88CE22D8295F65DE0078A6CB /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		88DC7F312962192700401BB9 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 88DC7F302962192700401BB9 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		88DC7F332962192700401BB9 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 88DC7F302962192700401BB9 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		88748AF2296775A2008F7CD5 /* Todo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				88748AF3296775A2008F7CD5 /* Todo.xcdatamodel */,
+			);
+			currentVersion = 88748AF3296775A2008F7CD5 /* Todo.xcdatamodel */;
+			path = Todo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 88CE22A9295EFB6F0078A6CB /* Project object */;
 }

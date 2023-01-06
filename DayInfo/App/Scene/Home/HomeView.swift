@@ -11,8 +11,48 @@ import Combine
 
 struct HomeView: View {
     // MARK: - PROPERTIES
+    @AppStorage("isList") var isList = true
+    
     @ObservedObject var viewModel = HomeViewModel()
-    @State var isList = true
+    
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: true)],
+        animation: .default)
+    private var items: FetchedResults<Item>
+    
+    private func addItem() {
+        withAnimation {
+            let newItem = Item(context: viewContext)
+            newItem.date = Date()
+            newItem.title = ""
+            newItem.content = ""
+            newItem.color = ""
+            newItem.done = false
+            newItem.id = UUID()
+            newItem.color = "#000000"
+
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { items[$0] }.forEach(viewContext.delete)
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
     
     // MARK: - BODY
     var body: some View {
@@ -30,34 +70,41 @@ struct HomeView: View {
                     Spacer()
                     
                     if isList {
-                        List(viewModel.todoList) { todo in
-                            NavigationLink {
-                                TodoDetailView(todo: todo)
-                            } label: {
-                                TodoItemView(todo: todo)
+                        List {
+                            ForEach (items) { item in
+                                NavigationLink {
+                                    TodoDetailView(item: item)
+                                } label: {
+                                    TodoItemView(item: item)
+                                }
                             }
+                            .onDelete(perform: deleteItems)
                         }
                         .listStyle(.plain)
                     } else {
                         ScrollView(.vertical, showsIndicators: false) {
                             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 20) {
-                                ForEach(viewModel.todoList) { todo in
+                                ForEach(items) { item in
                                     NavigationLink {
-                                        TodoDetailView(todo: todo)
+                                        TodoDetailView(item: item)
                                     } label: {
-                                        TodoGridItemView(todo: todo)
+                                        TodoGridItemView(item: item)
                                             .shadow(color: .black.opacity(0.25), radius: 3, x: 3, y: 2)
+//                                            .onLongPressGesture {
+//                                                guard let index = items.firstIndex(of: item) else { return }
+//                                                deleteItems(offsets: IndexSet(integer: index))
                                     }
                                 }
+                                
                             }
-                            .padding(.vertical, 8)
+                            .padding()
                         }
                     }
                 }
-                .padding()
                 
                 NavigationLink(destination: {
-                    TodoDetailView(todo: sampleTodo)
+                    AddTodoView()
+                        .environment(\.managedObjectContext, self.viewContext)
                 }, label: {
                     Circle()
                         .foregroundColor(Color.yellow)
@@ -67,27 +114,38 @@ struct HomeView: View {
                                 .font(.system(size: 30))
                                 .foregroundColor(.white)
                         )
-                            .padding(10)
+                        .padding(10)
                         .shadow(color: .black.opacity(0.2), radius: 8, x: 3, y: 4)
                 })
             }
             .onAppear {
-                viewModel.fetchTodo()
             }
-            .navigationBarTitle("HOME", displayMode: .large)
+            .navigationBarTitle("HOME", displayMode: .inline)
+            
             .toolbar {
-                HStack {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        SettingView()
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .foregroundColor(.black)
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         isList.toggle()
                     } label: {
                         Image(systemName: isList ? "square.grid.2x2" : "square.fill.text.grid.1x2")
+                            .foregroundColor(.black)
                     }
                 }
             }
         }
     }
 }
- 
+
+
 
 // MARK: - PREVIEW
 struct HomeView_Previews: PreviewProvider {
