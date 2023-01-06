@@ -14,7 +14,7 @@ struct WeatherView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
             VStack(alignment: .center, spacing: 4) {
-                Image(systemName: "sun.max")
+                Image(systemName: checkIcon(id: weather.weather[0].id))
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)

@@ -30,3 +30,44 @@ func calculateDate(date: Date) -> String {
         return "D-DAY"
     }
 }
+
+func checkIcon(id: Int) -> String {
+    switch id {
+    case 200...202, 230...232:
+        return "cloud.bolt.rain"
+    case 210...221:
+        return "cloud.bolt"
+    case 300...321:
+        return "cloud.drizzle"
+    case 500...504:
+        return "cloud.rain"
+    case 511:
+        return "cloud.hail"
+    case 520...531:
+        return "cloud.heavyrain"
+    case 600...602:
+        return "cloud.snow"
+    case 611...622:
+        return "cloud.sleet"
+    case 711 :
+        return "smoke"
+    case 721:
+        return "sun.haze"
+    case 731, 751, 761, 762:
+        return "sun.dust"
+    case 771:
+        return "wind"
+    case 781:
+        return "tornado"
+    case 701, 741 :
+        return "cloud.fog"
+    case 800:
+        return "sun.max"
+    case 801 :
+        return "cloud.sun"
+    case 802...804:
+        return "cloud"
+    default:
+        return "sun.min"
+    }
+}
