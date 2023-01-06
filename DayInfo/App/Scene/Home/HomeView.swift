@@ -117,11 +117,8 @@ struct HomeView: View {
                         .padding(10)
                         .shadow(color: .black.opacity(0.2), radius: 8, x: 3, y: 4)
                 })
-            }
-            .onAppear {
-            }
+            }    
             .navigationBarTitle("HOME", displayMode: .inline)
-            
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink {
@@ -142,6 +139,7 @@ struct HomeView: View {
                 }
             }
         }
+        .accentColor(.black)
     }
 }
 
