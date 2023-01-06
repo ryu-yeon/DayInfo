@@ -8,7 +8,7 @@
 import SwiftUI
 
 let sampleWeather = Weather(weather: [WeatherBasic(id: 803, main: "Clouds", description: "튼구름", icon: "04d")],
-                            main: WeatherMain(temp: -8.27, feels_like: -12.47, temp_min: -7.22, temp_max: -13.51, pressure: 1033, humidity: 53))
+                            main: WeatherMain(temp: -8.27, feels_like: -12.47, temp_min: -7.22, temp_max: -13.51, pressure: 1033, humidity: 53), sys: SunTime(sunrise: 1673045208, sunset: 1673080105))
 
 let gridSize = (UIScreen.main.bounds.width - 60) / 2
 
@@ -31,7 +31,16 @@ func calculateDate(date: Date) -> String {
     }
 }
 
-func checkIcon(id: Int) -> String {
+func checkIcon(id: Int, sunrise: Double, sunset: Double) -> String {
+
+    let unixTime = Date().timeIntervalSince1970
+    var isSun = true
+    if unixTime >= sunrise && unixTime <= sunset{
+        isSun = true
+    } else {
+        isSun = false
+    }
+    
     switch id {
     case 200...202, 230...232:
         return "cloud.bolt.rain"
@@ -52,9 +61,9 @@ func checkIcon(id: Int) -> String {
     case 711 :
         return "smoke"
     case 721:
-        return "sun.haze"
+        return isSun ? "sun.haze" : "moon.haze"
     case 731, 751, 761, 762:
-        return "sun.dust"
+        return isSun ? "sun.dust" : "moon.dust"
     case 771:
         return "wind"
     case 781:
@@ -62,12 +71,12 @@ func checkIcon(id: Int) -> String {
     case 701, 741 :
         return "cloud.fog"
     case 800:
-        return "sun.max"
+        return isSun ? "sun.max" : "moon"
     case 801 :
-        return "cloud.sun"
+        return isSun ? "cloud.sun" : "cloud.moon"
     case 802...804:
         return "cloud"
     default:
-        return "sun.min"
+        return isSun ? "sun.min" : "moon"
     }
 }

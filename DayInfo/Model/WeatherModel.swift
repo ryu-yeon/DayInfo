@@ -10,6 +10,7 @@ import Foundation
 struct Weather: Codable {
     let weather: [WeatherBasic]
     let main: WeatherMain
+    let sys: SunTime
 }
 
 struct WeatherBasic: Codable {
@@ -26,4 +27,9 @@ struct WeatherMain: Codable {
     let temp_max: Double
     let pressure: Int
     let humidity: Int
+}
+
+struct SunTime: Codable {
+    let sunrise: Double
+    let sunset: Double
 }
