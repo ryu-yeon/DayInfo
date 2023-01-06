@@ -73,14 +73,16 @@ struct AddTodoView: View {
         .padding()
         .toolbar {
             Button {
-                let newItem = Item(context: self.contextView)
-                newItem.title = title
-                newItem.content = content
-                newItem.date = date
-                newItem.color = color
-                newItem.done = task
-                newItem.id = UUID()
-                try? self.contextView.save()
+                if title != "" {
+                    let newItem = Item(context: self.contextView)
+                    newItem.title = title
+                    newItem.content = content
+                    newItem.date = date
+                    newItem.color = color
+                    newItem.done = task
+                    newItem.id = UUID()
+                    try? self.contextView.save()
+                }
                 self.presentation.wrappedValue.dismiss()
             } label: {
                 Text("저장")
