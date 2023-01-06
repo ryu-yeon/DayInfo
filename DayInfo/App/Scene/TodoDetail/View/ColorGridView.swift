@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ColorGridView: View {
     
-    var todo: Todo
+    @Environment(\.managedObjectContext) var contextView
+    @ObservedObject var item: Item
     
     var body: some View {
         LazyHGrid(rows: [GridItem(.flexible())], spacing: 8) {
@@ -18,9 +19,8 @@ struct ColorGridView: View {
                     .frame(width: 30, height: 30)
                     .foregroundColor(Color.init(hex: colorString))
                     .onTapGesture {
-                        withAnimation {
-                            TodoRepository.shared.updateColor(colorString, todo: todo)
-                        }
+                        item.color = colorString
+                        try? self.contextView.save()
                     }
             }
         }
@@ -28,10 +28,10 @@ struct ColorGridView: View {
     }
 }
 
-struct ColorGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        ColorGridView(todo: sampleTodo)
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+//struct ColorGridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ColorGridView(todo: sampleTodo)
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//    }
+//}
