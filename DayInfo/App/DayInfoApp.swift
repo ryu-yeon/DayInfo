@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct DayInfoApp: App {
+    
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+           HomeView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
