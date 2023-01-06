@@ -19,12 +19,7 @@ final class HomeViewModel: ObservableObject {
     var cancellable = Set<AnyCancellable>()
     
     @Published var weather: Weather? = nil
-    @Published var todoList: [Todo] = []
-    
-    func fetchTodo() {
-        todoList = TodoRepository.shared.fetchTodo()
-    }
-    
+
     func fetchWeather() {
         api.pass
             .sink { weather in
@@ -32,4 +27,6 @@ final class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellable)
     }
+    
+    
 }
