@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct TodoDetailView: View {
     
@@ -18,13 +19,13 @@ struct TodoDetailView: View {
     
     @State private var date = Date()
     
-    @ObservedObject var item: Item
+    @ObservedObject var todo: Todo
     
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             if isEditMode {
                 HStack {
-                    ColorGridView(item: item)
+                    ColorGridView(todo: todo)
                     
                     Spacer()
                     
@@ -32,7 +33,7 @@ struct TodoDetailView: View {
 
                     }
                     .onChange(of: date) { newValue in
-                        item.date = date
+                        todo.date = date
                         try? self.contextView.save()
                     }
                 }
@@ -46,19 +47,21 @@ struct TodoDetailView: View {
                         RoundedRectangle(cornerRadius: 5).stroke(Color.gray, lineWidth: 2)
                     )
                     .onChange(of: title) { newValue in
-                        item.title = newValue
-                        try? self.contextView.save()
+                        if newValue != "" {
+                            todo.title = newValue
+                            try? self.contextView.save()
+                        }
                     }
                 
-                Image(systemName: item.done ? "checkmark.circle" : "circle")
+                Image(systemName: todo.done ? "checkmark.circle" : "circle")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40)
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.init(hex: item.color ?? "#000000"))
+                    .foregroundColor(Color.init(hex: todo.color ?? "#000000"))
                     .onTapGesture {
                         withAnimation {
-                            item.done.toggle()
+                            todo.done.toggle()
                             try? self.contextView.save()
                             feedback.impactOccurred()
                         }
@@ -72,14 +75,14 @@ struct TodoDetailView: View {
                     RoundedRectangle(cornerRadius: 5).stroke(Color.gray, lineWidth: 2)
                 )
                 .onChange(of: description) { newValue in
-                    item.content = newValue
+                    todo.content = newValue
                     try? self.contextView.save()
                 }
         }
         .onAppear {
-            title = item.title ?? ""
-            description = item.content ?? ""
-            date = item.date ?? Date()
+            title = todo.title ?? ""
+            description = todo.content ?? ""
+            date = todo.date ?? Date()
         }
         .padding()
         .toolbar {
@@ -93,7 +96,7 @@ struct TodoDetailView: View {
                 }
             } else {
                 Button {
-                    self.contextView.delete(item)
+                    self.contextView.delete(todo)
                     try? self.contextView.save()
                     self.presentation.wrappedValue.dismiss()
                 } label: {

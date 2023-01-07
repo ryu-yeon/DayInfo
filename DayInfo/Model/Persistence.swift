@@ -16,7 +16,7 @@ struct PersistenceController {
     
     // MARK: - INITIALIZATION (load the persistent store)
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Todo")
+        container = NSPersistentContainer(name: "Item")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
@@ -33,7 +33,7 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContenxt = result.container.viewContext
         for i in 0..<5 {
-            let newItem = Item(context: viewContenxt)
+            let newItem = Todo(context: viewContenxt)
             newItem.date = Date()
             newItem.title = "Sample task No\(i)"
             newItem.done = false

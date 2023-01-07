@@ -10,7 +10,7 @@ import SwiftUI
 struct ColorGridView: View {
     
     @Environment(\.managedObjectContext) var contextView
-    @ObservedObject var item: Item
+    @ObservedObject var todo: Todo
     
     var body: some View {
         LazyHGrid(rows: [GridItem(.flexible())], spacing: 8) {
@@ -19,7 +19,7 @@ struct ColorGridView: View {
                     .frame(width: 30, height: 30)
                     .foregroundColor(Color.init(hex: colorString))
                     .onTapGesture {
-                        item.color = colorString
+                        todo.color = colorString
                         try? self.contextView.save()
                     }
             }

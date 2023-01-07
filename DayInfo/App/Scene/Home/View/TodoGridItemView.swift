@@ -11,31 +11,31 @@ struct TodoGridItemView: View {
     
     @State var task = false
     @Environment(\.managedObjectContext) var viewContext
-    @ObservedObject var item: Item
+    @ObservedObject var todo: Todo
     
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
-            Image(systemName: item.done ? "checkmark.circle" : "circle")
+            Image(systemName: todo.done ? "checkmark.circle" : "circle")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 30)
-                .foregroundColor(Color.init(hex: item.color ?? "#000000"))
+                .foregroundColor(Color.init(hex: todo.color ?? "#000000"))
                 .padding(.leading, 12)
                 .onTapGesture {
-                    item.done.toggle()
+                    todo.done.toggle()
                     try? self.viewContext.save()
                     feedback.impactOccurred()
                 }
             
             VStack(alignment: .center, spacing: 8) {
-                Text(item.title ?? "")
-                    .strikethrough(item.done, color: .init(hex: item.color ?? "#000000"))
+                Text(todo.title ?? "")
+                    .strikethrough(todo.done, color: .init(hex: todo.color ?? "#000000"))
                     .font(.system(size: 18))
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                     .lineLimit(1)
                 
-                Text(calculateDate(date: item.date ?? Date()))
+                Text(calculateDate(date: todo.date ?? Date()))
                     .font(.system(size: 15, design: .rounded))
                     .fontWeight(.medium)
                     .foregroundColor(.black)
@@ -45,7 +45,7 @@ struct TodoGridItemView: View {
         .padding()
         .frame(width: gridSize, height: gridSize / 2)
         .background(Color.white.cornerRadius(12))
-        .background(RoundedRectangle(cornerRadius: 12).stroke(Color.init(hex: item.color ?? "#000000"), lineWidth: 3))
+        .background(RoundedRectangle(cornerRadius: 12).stroke(Color.init(hex: todo.color ?? "#000000"), lineWidth: 3))
     }
 }
 

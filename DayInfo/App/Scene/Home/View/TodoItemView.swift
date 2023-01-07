@@ -10,39 +10,39 @@ import SwiftUI
 struct TodoItemView: View {
         
     @Environment (\.managedObjectContext) var viewContext
-    @ObservedObject var item: Item
+    @ObservedObject var todo: Todo
     
     var body: some View {
         
         HStack(alignment: .center, spacing: 16) {
             VStack(alignment: .center, spacing: 8) {
-                Image(systemName: item.done ? "checkmark.circle" : "circle")
+                Image(systemName: todo.done ? "checkmark.circle" : "circle")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height: 30)
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.init(hex: item.color ?? "#000000"))
+                    .foregroundColor(Color.init(hex: todo.color ?? "#000000"))
                     .offset(y: 4)
                     .onTapGesture {
-                        item.done.toggle()
+                        todo.done.toggle()
                         try? self.viewContext.save()
                         feedback.impactOccurred()
                     }
                 
-                Text(calculateDate(date: item.date ?? Date()))
+                Text(calculateDate(date: todo.date ?? Date()))
                     .font(.system(size: 12, design: .rounded))
                     .frame(maxWidth: 60)
             }
             
             VStack(alignment: .leading, spacing: 8) {
     
-                Text(item.title ?? "")
-                    .strikethrough(item.done, color: .init(hex: item.color ?? "#000000"))
+                Text(todo.title ?? "")
+                    .strikethrough(todo.done, color: .init(hex: todo.color ?? "#000000"))
                     .font(.headline)
                     .fontWeight(.heavy)
                     .lineLimit(1)
                 
-                Text(item.content ?? "")
+                Text(todo.content ?? "")
                     .font(.footnote)
                     .fontWeight(.light)
                     .multilineTextAlignment(.leading)
