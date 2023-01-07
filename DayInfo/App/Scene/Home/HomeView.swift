@@ -12,20 +12,26 @@ import Combine
 struct HomeView: View {
     // MARK: - PROPERTIES
     @AppStorage("isList") var isList = true
+    @State private var selectedIndex = -1
+    @State private var showAlert = false
     
     @ObservedObject var viewModel = HomeViewModel()
     @State var isFilter = false
-    @State var todoList: [Item] = []
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Todo.date, ascending: true)],
+        animation: .default) private var todos: FetchedResults<Todo>
     
-    private func addItem() {
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Todo.date, ascending: true)],
+        predicate: NSPredicate(format: "done == NO"),
+        animation: .default) private var todoList: FetchedResults<Todo>
+    
+    
+    private func addTodo() {
         withAnimation {
-            let newItem = Item(context: viewContext)
+            let newItem = Todo(context: viewContext)
             newItem.date = Date()
             newItem.title = ""
             newItem.content = ""
@@ -43,9 +49,9 @@ struct HomeView: View {
         }
     }
     
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteTodos(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { todos[$0] }.forEach(viewContext.delete)
             do {
                 try viewContext.save()
             } catch {
@@ -73,11 +79,6 @@ struct HomeView: View {
                         Spacer()
                         
                         Button {
-                            if isFilter {
-                                todoList = Array(items)
-                            } else {
-                                todoList = Array(items).filter{$0.done == false}
-                            }
                             isFilter.toggle()
                         } label: {
                             Text(isFilter ? "모두 보기" : "미완료 보기")
@@ -102,28 +103,44 @@ struct HomeView: View {
                     
                     if isList {
                         List {
-                            ForEach (todoList) { item in
+                            ForEach (isFilter ? todoList : todos) { todo in
                                 NavigationLink {
-                                    TodoDetailView(item: item)
+                                    TodoDetailView(todo: todo)
                                 } label: {
-                                    TodoItemView(item: item)
+                                    TodoItemView(todo: todo)
                                 }
                             }
-                            .onDelete(perform: deleteItems)
+                            .onDelete(perform: deleteTodos)
                         }
                         .listStyle(.plain)
                     } else {
                         ScrollView(.vertical, showsIndicators: false) {
                             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 20) {
-                                ForEach(todoList) { item in
+                                ForEach(isFilter ? todoList : todos) { todo in
                                     NavigationLink {
-                                        TodoDetailView(item: item)
+                                        TodoDetailView(todo: todo)
                                     } label: {
-                                        TodoGridItemView(item: item)
+                                        TodoGridItemView(todo: todo)
                                             .shadow(color: .black.opacity(0.25), radius: 3, x: 3, y: 2)
-//                                            .onLongPressGesture {
-//                                                guard let index = items.firstIndex(of: item) else { return }
-//                                                deleteItems(offsets: IndexSet(integer: index))
+                                            .onLongPressGesture(perform: {
+                                                guard let index = todos.firstIndex(of: todo) else { return }
+                                                selectedIndex = index
+                                                showAlert = true
+                                            })
+                                            .alert(isPresented: $showAlert) {
+                                                Alert(
+                                                    title: Text("삭제하시겠습니까?"),
+                                                    primaryButton: .default(
+                                                        Text("취소")
+                                                    ),
+                                                    secondaryButton: .destructive(
+                                                        Text("삭제"),
+                                                        action: {
+                                                            deleteTodos(offsets: IndexSet(integer: selectedIndex))
+                                                        }
+                                                    )
+                                                )
+                                            }
                                     }
                                 }
                                 
@@ -163,7 +180,7 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            todoList = Array(items)
+//            todoList = Array(todos)
         }
         .accentColor(.black)
     }
