@@ -150,7 +150,7 @@ struct HomeView: View {
                         .padding(.trailing, 8)
                 })
             }    
-            .navigationBarTitle("HOME", displayMode: .inline)
+            .navigationBarTitle("TODO", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
