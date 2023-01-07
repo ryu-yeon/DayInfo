@@ -138,7 +138,7 @@ struct HomeView: View {
                         .environment(\.managedObjectContext, self.viewContext)
                 }, label: {
                     Circle()
-                        .foregroundColor(Color.yellow)
+                        .foregroundColor(Color.gray)
                         .frame(width: 60, height: 60)
                         .overlay(
                             Image(systemName: "plus")
@@ -147,6 +147,7 @@ struct HomeView: View {
                         )
                         .padding(10)
                         .shadow(color: .black.opacity(0.2), radius: 8, x: 3, y: 4)
+                        .padding(.trailing, 8)
                 })
             }    
             .navigationBarTitle("HOME", displayMode: .inline)
