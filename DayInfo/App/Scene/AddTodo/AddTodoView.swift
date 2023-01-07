@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct AddTodoView: View {
     @State private var title = ""
@@ -14,7 +15,8 @@ struct AddTodoView: View {
     @State private var isEditMode = false
     @State private var isAnimating = false
     @State private var color = "#000000"
-
+    @State private var showAlert = false
+    
     @Environment(\.presentationMode) var presentation
     @Environment(\.managedObjectContext) var contextView
     
@@ -74,7 +76,7 @@ struct AddTodoView: View {
         .toolbar {
             Button {
                 if title != "" {
-                    let newItem = Item(context: self.contextView)
+                    let newItem = Todo(context: self.contextView)
                     newItem.title = title
                     newItem.content = content
                     newItem.date = date
@@ -82,12 +84,22 @@ struct AddTodoView: View {
                     newItem.done = task
                     newItem.id = UUID()
                     try? self.contextView.save()
+                    self.presentation.wrappedValue.dismiss()
+                } else {
+                    showAlert = true
                 }
-                self.presentation.wrappedValue.dismiss()
             } label: {
                 Text("저장")
             }
         }
+        .popup(isPresented: $showAlert, type: .floater(verticalPadding: 20), position: .top, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true, view: {
+            
+            Text("할 일을 입력해주세요.")
+                .padding(8)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
+        })
         .navigationBarTitleDisplayMode(.inline)
     }
 }
