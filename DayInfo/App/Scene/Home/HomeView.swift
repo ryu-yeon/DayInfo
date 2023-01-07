@@ -14,7 +14,8 @@ struct HomeView: View {
     @AppStorage("isList") var isList = true
     
     @ObservedObject var viewModel = HomeViewModel()
-    
+    @State var isFilter = false
+    @State var todoList: [Item] = []
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -68,10 +69,40 @@ struct HomeView: View {
                     }
                     
                     Spacer()
+                    HStack(alignment: .center, spacing: 8) {
+                        Spacer()
+                        
+                        Button {
+                            if isFilter {
+                                todoList = Array(items)
+                            } else {
+                                todoList = Array(items).filter{$0.done == false}
+                            }
+                            isFilter.toggle()
+                        } label: {
+                            Text(isFilter ? "모두 보기" : "미완료 보기")
+                                .font(.footnote)
+                                .padding(4)
+                                .background(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                                .background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray ,lineWidth: 3))
+                        }
+                        
+                        Button {
+                            isList.toggle()
+                        } label: {
+                            Image(systemName: isList ? "square.grid.2x2" : "square.fill.text.grid.1x2")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(.black)
+                        }
+                        .padding(.leading, 8)
+                        .padding(.trailing, 16)
+                    }
                     
                     if isList {
                         List {
-                            ForEach (items) { item in
+                            ForEach (todoList) { item in
                                 NavigationLink {
                                     TodoDetailView(item: item)
                                 } label: {
@@ -84,7 +115,7 @@ struct HomeView: View {
                     } else {
                         ScrollView(.vertical, showsIndicators: false) {
                             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 20) {
-                                ForEach(items) { item in
+                                ForEach(todoList) { item in
                                     NavigationLink {
                                         TodoDetailView(item: item)
                                     } label: {
@@ -120,24 +151,18 @@ struct HomeView: View {
             }    
             .navigationBarTitle("HOME", displayMode: .inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
                         SettingView()
                     } label: {
-                        Image(systemName: "gearshape")
-                            .foregroundColor(.black)
-                    }
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        isList.toggle()
-                    } label: {
-                        Image(systemName: isList ? "square.grid.2x2" : "square.fill.text.grid.1x2")
+                        Image(systemName: "person.circle")
                             .foregroundColor(.black)
                     }
                 }
             }
+        }
+        .onAppear {
+            todoList = Array(items)
         }
         .accentColor(.black)
     }
