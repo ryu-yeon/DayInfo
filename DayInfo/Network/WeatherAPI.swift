@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum WeatherAPI {
-    case weatherInfo
+    case weatherInfo(lat: Double, lon: Double)
 }
 
 extension WeatherAPI: TargetType {
@@ -37,10 +37,10 @@ extension WeatherAPI: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .weatherInfo:
+        case .weatherInfo(let lat, let lon):
             let parameters: [String: Any] = [
-                "lat": 37.498454033368,
-                "lon": 127.03229336072,
+                "lat": lat,
+                "lon": lon,
                 "appid": apikey,
                 "lang": "kr",
                 "units": "metric"
