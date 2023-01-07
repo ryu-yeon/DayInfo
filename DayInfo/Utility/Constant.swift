@@ -63,7 +63,7 @@ func checkIcon(id: Int, sunrise: Double, sunset: Double) -> String {
     case 721:
         return isSun ? "sun.haze" : "moon.haze"
     case 731, 751, 761, 762:
-        return isSun ? "sun.dust" : "moon.dust"
+        return isSun ? "sun.dust" : "moon.haze"
     case 771:
         return "wind"
     case 781:
