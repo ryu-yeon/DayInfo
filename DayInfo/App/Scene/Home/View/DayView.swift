@@ -58,7 +58,7 @@ struct DayView: View {
             HStack {
                 TextField("제목을 입력해주세요.", text: $title)
                     .textFieldStyle(.roundedBorder)
-                    .frame(width: 180)
+                    .frame(width: 160)
                 
                 DatePicker(selection: $date, displayedComponents: .date){
                     
@@ -110,7 +110,7 @@ struct DayView: View {
 
         }
         .padding()
-        .frame(width: 300, height: 150)
+        .frame(width: 320, height: 150)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))

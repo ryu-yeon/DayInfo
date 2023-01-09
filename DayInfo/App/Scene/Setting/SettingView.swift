@@ -12,7 +12,7 @@ struct SettingView: View {
         VStack(alignment: .center, spacing: 8) {
             GroupBox(
                 label:
-                    SettingLabelView(labelText: "심플한 투두", labelImage: "info.circle")
+                    SettingLabelView(labelText: "심플한 투두", labelImage: "logo")
             ) {
                 Divider().padding(.vertical, 4)
                 
