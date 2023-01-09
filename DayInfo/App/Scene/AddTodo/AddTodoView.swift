@@ -92,7 +92,7 @@ struct AddTodoView: View {
                 Text("저장")
             }
         }
-        .popup(isPresented: $showAlert, type: .floater(verticalPadding: 20), position: .top, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true, view: {
+        .popup(isPresented: $showAlert, type: .floater(verticalPadding: 20), position: .top, animation: .spring(), autohideIn: 1, closeOnTap: true, closeOnTapOutside: true, view: {
             
             Text("할 일을 입력해주세요.")
                 .padding(8)
