@@ -13,7 +13,7 @@
 		885493732965EC7C00B14B73 /* WeatherAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493722965EC7C00B14B73 /* WeatherAPIService.swift */; };
 		885493762965FAEF00B14B73 /* TodoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885493752965FAEF00B14B73 /* TodoGridItemView.swift */; };
 		88549378296608EC00B14B73 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88549377296608EC00B14B73 /* Extension+Color.swift */; };
-		88748AF4296775A2008F7CD5 /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88748AF2296775A2008F7CD5 /* Todo.xcdatamodeld */; };
+		88748AF4296775A2008F7CD5 /* Item.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88748AF2296775A2008F7CD5 /* Item.xcdatamodeld */; };
 		88748AF6296775C7008F7CD5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88748AF5296775C7008F7CD5 /* Persistence.swift */; };
 		8877D9182966113A00B29F1D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877D9172966113A00B29F1D /* APIKey.swift */; };
 		8878A45029617414005F7E15 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A44F29617414005F7E15 /* Constant.swift */; };
@@ -34,6 +34,7 @@
 		88F019382969B6EB006A5826 /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F019372969B6EB006A5826 /* SettingRowView.swift */; };
 		88F0193A2969B721006A5826 /* SettingLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F019392969B721006A5826 /* SettingLabelView.swift */; };
 		88F0193D2969BDC0006A5826 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0193C2969BDC0006A5826 /* LocationHelper.swift */; };
+		88F01947296A05B1006A5826 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 88F01946296A05B1006A5826 /* PopupView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		88F019372969B6EB006A5826 /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
 		88F019392969B721006A5826 /* SettingLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLabelView.swift; sourceTree = "<group>"; };
 		88F0193C2969BDC0006A5826 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		88F0193E2969CA76006A5826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F01947296A05B1006A5826 /* PopupView in Frameworks */,
 				8854936D2965EC2B00B14B73 /* Moya in Frameworks */,
 				88CE22DA295F65DF0078A6CB /* Alamofire in Frameworks */,
 			);
@@ -126,6 +129,7 @@
 		88CE22B3295EFB6F0078A6CB /* DayInfo */ = {
 			isa = PBXGroup;
 			children = (
+				88F0193E2969CA76006A5826 /* Info.plist */,
 				885493742965ED3C00B14B73 /* Network */,
 				8878A44E29616E46005F7E15 /* Utility */,
 				88CE22C4295EFBA40078A6CB /* Model */,
@@ -169,7 +173,7 @@
 			children = (
 				88CE22DB295F67A40078A6CB /* WeatherModel.swift */,
 				88748AF5296775C7008F7CD5 /* Persistence.swift */,
-				88748AF2296775A2008F7CD5 /* Todo.xcdatamodeld */,
+				88748AF2296775A2008F7CD5 /* Item.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 			packageProductDependencies = (
 				88CE22D9295F65DF0078A6CB /* Alamofire */,
 				8854936C2965EC2B00B14B73 /* Moya */,
+				88F01946296A05B1006A5826 /* PopupView */,
 			);
 			productName = DayInfo;
 			productReference = 88CE22B1295EFB6F0078A6CB /* DayInfo.app */;
@@ -281,6 +286,7 @@
 			packageReferences = (
 				88CE22D8295F65DE0078A6CB /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8854936B2965EC2A00B14B73 /* XCRemoteSwiftPackageReference "Moya" */,
+				88F01945296A05B1006A5826 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 88CE22B2295EFB6F0078A6CB /* Products */;
 			projectDirPath = "";
@@ -322,7 +328,7 @@
 				88F0193A2969B721006A5826 /* SettingLabelView.swift in Sources */,
 				88549378296608EC00B14B73 /* Extension+Color.swift in Sources */,
 				8878A45829618255005F7E15 /* CoverView.swift in Sources */,
-				88748AF4296775A2008F7CD5 /* Todo.xcdatamodeld in Sources */,
+				88748AF4296775A2008F7CD5 /* Item.xcdatamodeld in Sources */,
 				885493762965FAEF00B14B73 /* TodoGridItemView.swift in Sources */,
 				885493702965EC3200B14B73 /* WeatherAPI.swift in Sources */,
 				88CE22D1295F04100078A6CB /* TodoItemView.swift in Sources */,
@@ -462,13 +468,16 @@
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "현재위치를 찾습니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재위치를 찾습니다.";
+				INFOPLIST_FILE = DayInfo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "심플한 투두";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "날씨정보 조회를 위해 현재위치정보가 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "날씨정보 조회를 위해 현재위치정보가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,13 +503,16 @@
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "현재위치를 찾습니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재위치를 찾습니다.";
+				INFOPLIST_FILE = DayInfo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "심플한 투두";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "날씨정보 조회를 위해 현재위치정보가 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "날씨정보 조회를 위해 현재위치정보가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,6 +567,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		88F01945296A05B1006A5826 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -568,16 +588,21 @@
 			package = 88CE22D8295F65DE0078A6CB /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
+		88F01946296A05B1006A5826 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88F01945296A05B1006A5826 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		88748AF2296775A2008F7CD5 /* Todo.xcdatamodeld */ = {
+		88748AF2296775A2008F7CD5 /* Item.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				88748AF3296775A2008F7CD5 /* Todo.xcdatamodel */,
 			);
 			currentVersion = 88748AF3296775A2008F7CD5 /* Todo.xcdatamodel */;
-			path = Todo.xcdatamodeld;
+			path = Item.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
