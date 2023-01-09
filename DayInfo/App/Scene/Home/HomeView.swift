@@ -61,47 +61,6 @@ struct HomeView: View {
         }
     }
     
-    private func deletPopup() -> some View {
-        VStack {
-            Text("삭제하시겠습니까?")
-                .foregroundColor(.black)
-                .fontWeight(.bold)
-                
-            
-            Spacer()
-            
-            HStack(alignment: .center, spacing: 20) {
-                Button {
-                    showAlert = false
-                } label: {
-                    Text("취소")
-                        .foregroundColor(.black)
-                }
-                .frame(width: 90, height: 40)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
-                
-                Button {
-                    deleteTodos(offsets: IndexSet(integer: selectedIndex))
-                    showAlert = false
-                } label: {
-                    Text("삭제")
-                        .foregroundColor(.red)
-                }
-                .frame(width: 90, height: 40)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
-            }
-        }
-        .padding()
-        .frame(width: 250, height: 120)
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
-     }
-    
     // MARK: - BODY
     var body: some View {
         
@@ -163,15 +122,6 @@ struct HomeView: View {
                                     } label: {
                                         TodoGridItemView(todo: todo)
                                             .shadow(color: .black.opacity(0.25), radius: 3, x: 3, y: 2)
-                                            .onLongPressGesture(perform: {
-                                                guard let index = todos.firstIndex(of: todo) else { return }
-                                                selectedIndex = index
-                                                showAlert = true
-                                            })
-                                            .popup(isPresented: $showAlert, type: .default, position: .bottom, animation: .spring(), closeOnTap: false, closeOnTapOutside: false, view: {
-                                                self.deletPopup()
-                                            })
-                                        
                                     }
                                 }
                                 
