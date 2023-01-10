@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PopupView
+import WidgetKit
 
 struct TodoDetailView: View {
     
@@ -35,6 +36,7 @@ struct TodoDetailView: View {
                     .onChange(of: date) { newValue in
                         todo.date = date
                         try? self.contextView.save()
+                        WidgetCenter.shared.reloadAllTimelines()
                     }
                 }
             }
@@ -50,6 +52,7 @@ struct TodoDetailView: View {
                         if newValue != "" {
                             todo.title = newValue
                             try? self.contextView.save()
+                            WidgetCenter.shared.reloadAllTimelines()
                         }
                     }
                 
@@ -63,6 +66,7 @@ struct TodoDetailView: View {
                         withAnimation {
                             todo.done.toggle()
                             try? self.contextView.save()
+                            WidgetCenter.shared.reloadAllTimelines()
                             feedback.impactOccurred()
                         }
                     }
@@ -77,6 +81,7 @@ struct TodoDetailView: View {
                 .onChange(of: description) { newValue in
                     todo.content = newValue
                     try? self.contextView.save()
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
         }
         .onAppear {
@@ -98,6 +103,7 @@ struct TodoDetailView: View {
                 Button {
                     self.contextView.delete(todo)
                     try? self.contextView.save()
+                    WidgetCenter.shared.reloadAllTimelines()
                     self.presentation.wrappedValue.dismiss()
                 } label: {
                     Text("삭제")
