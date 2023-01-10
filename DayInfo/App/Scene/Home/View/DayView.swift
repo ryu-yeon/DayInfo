@@ -93,6 +93,8 @@ struct DayView: View {
                         WidgetCenter.shared.reloadAllTimelines()
                         try? self.viewContext.save()
                         showMakeAlert = false
+                        title = ""
+                        date = Date()
                     }
                 } label: {
                     Text("저장")
