@@ -10,7 +10,7 @@
 - 위젯
 
 
-<a href="https://apps.apple.com/kr/app/%EB%AD%90-%EB%B6%80%EB%A5%B4%EC%A7%80-%EB%82%B4-%EB%A7%98%EB%8C%80%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%85%B8%EB%9E%98-%EB%A6%AC%EC%8A%A4%ED%8A%B8/id6443573821" target="_blank"><img src="https://developer.apple.com/news/images/download-on-the-app-store-badge.png" width="150px" /></a>  
+<a href="https://apps.apple.com/kr/app/%EC%8B%AC%ED%94%8C%ED%95%9C-%ED%88%AC%EB%91%90/id1663704834" target="_blank"><img src="https://developer.apple.com/news/images/download-on-the-app-store-badge.png" width="150px" /></a>  
 
 ## **🗓️ 개발기간**
 ### 2022.12.31 ~ 2023.01.10 (10일)  
