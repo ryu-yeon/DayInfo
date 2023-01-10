@@ -145,7 +145,7 @@ struct TodoWidgetEntryView : View {
                         Text("\(todList.count)")
                             .font(.system(size: 18, weight: .bold, design: .rounded))
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 8)
                     .padding(.top, 8)
                     .padding(.bottom, 0)
                     
