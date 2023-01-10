@@ -21,6 +21,27 @@
 		8878A45629618103005F7E15 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A45529618103005F7E15 /* DayView.swift */; };
 		8878A45829618255005F7E15 /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A45729618255005F7E15 /* CoverView.swift */; };
 		8878A45B29618986005F7E15 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A45A29618986005F7E15 /* TodoDetailView.swift */; };
+		88C93BFD296BD00600366D87 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C93BFC296BD00600366D87 /* WidgetKit.framework */; };
+		88C93BFF296BD00600366D87 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C93BFE296BD00600366D87 /* SwiftUI.framework */; };
+		88C93C02296BD00600366D87 /* TodoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C01296BD00600366D87 /* TodoWidgetBundle.swift */; };
+		88C93C04296BD00600366D87 /* TodoWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C03296BD00600366D87 /* TodoWidgetLiveActivity.swift */; };
+		88C93C06296BD00600366D87 /* TodoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C05296BD00600366D87 /* TodoWidget.swift */; };
+		88C93C09296BD00700366D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C93C08296BD00700366D87 /* Assets.xcassets */; };
+		88C93C0B296BD00700366D87 /* TodoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C07296BD00600366D87 /* TodoWidget.intentdefinition */; };
+		88C93C0C296BD00700366D87 /* TodoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C07296BD00600366D87 /* TodoWidget.intentdefinition */; };
+		88C93C0F296BD00700366D87 /* TodoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 88C93BFA296BD00600366D87 /* TodoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		88C93C14296BD12700366D87 /* Item.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88748AF2296775A2008F7CD5 /* Item.xcdatamodeld */; };
+		88C93C15296BD12C00366D87 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88748AF5296775C7008F7CD5 /* Persistence.swift */; };
+		88C93C18296BD40D00366D87 /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22D0295F04100078A6CB /* TodoItemView.swift */; };
+		88C93C19296BD43F00366D87 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A44F29617414005F7E15 /* Constant.swift */; };
+		88C93C1A296BD45600366D87 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22DB295F67A40078A6CB /* WeatherModel.swift */; };
+		88C93C1B296BD46700366D87 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88549377296608EC00B14B73 /* Extension+Color.swift */; };
+		88C93C1D296BD70D00366D87 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C1C296BD70D00366D87 /* AppGroup.swift */; };
+		88C93C1E296BD70D00366D87 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C1C296BD70D00366D87 /* AppGroup.swift */; };
+		88C93C23296CDA0400366D87 /* CustomPersistenceContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C22296CDA0400366D87 /* CustomPersistenceContorller.swift */; };
+		88C93C24296CDA0400366D87 /* CustomPersistenceContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C22296CDA0400366D87 /* CustomPersistenceContorller.swift */; };
+		88C93C29296CFBFE00366D87 /* TodoItemWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C28296CFBFE00366D87 /* TodoItemWidgetView.swift */; };
+		88C93C2A296CFBFE00366D87 /* TodoItemWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C28296CFBFE00366D87 /* TodoItemWidgetView.swift */; };
 		88CE22B5295EFB6F0078A6CB /* DayInfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22B4295EFB6F0078A6CB /* DayInfoApp.swift */; };
 		88CE22B7295EFB6F0078A6CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE22B6295EFB6F0078A6CB /* HomeView.swift */; };
 		88CE22B9295EFB700078A6CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CE22B8295EFB700078A6CB /* Assets.xcassets */; };
@@ -37,6 +58,30 @@
 		88F01947296A05B1006A5826 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 88F01946296A05B1006A5826 /* PopupView */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		88C93C0D296BD00700366D87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88CE22A9295EFB6F0078A6CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C93BF9296BD00600366D87;
+			remoteInfo = TodoWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88C93C13296BD00700366D87 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				88C93C0F296BD00700366D87 /* TodoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		885493682965E92F00B14B73 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8854936E2965EC3200B14B73 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
@@ -51,6 +96,20 @@
 		8878A45529618103005F7E15 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		8878A45729618255005F7E15 /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		8878A45A29618986005F7E15 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
+		88C93BFA296BD00600366D87 /* TodoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C93BFC296BD00600366D87 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		88C93BFE296BD00600366D87 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		88C93C01296BD00600366D87 /* TodoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWidgetBundle.swift; sourceTree = "<group>"; };
+		88C93C03296BD00600366D87 /* TodoWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		88C93C05296BD00600366D87 /* TodoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWidget.swift; sourceTree = "<group>"; };
+		88C93C07296BD00600366D87 /* TodoWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = TodoWidget.intentdefinition; sourceTree = "<group>"; };
+		88C93C08296BD00700366D87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88C93C0A296BD00700366D87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C93C16296BD23E00366D87 /* DayInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DayInfo.entitlements; sourceTree = "<group>"; };
+		88C93C17296BD26D00366D87 /* TodoWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoWidgetExtension.entitlements; sourceTree = "<group>"; };
+		88C93C1C296BD70D00366D87 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		88C93C22296CDA0400366D87 /* CustomPersistenceContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPersistenceContorller.swift; sourceTree = "<group>"; };
+		88C93C28296CFBFE00366D87 /* TodoItemWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemWidgetView.swift; sourceTree = "<group>"; };
 		88CE22B1295EFB6F0078A6CB /* DayInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CE22B4295EFB6F0078A6CB /* DayInfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoApp.swift; sourceTree = "<group>"; };
 		88CE22B6295EFB6F0078A6CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -68,6 +127,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		88C93BF7296BD00600366D87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C93BFF296BD00600366D87 /* SwiftUI.framework in Frameworks */,
+				88C93BFD296BD00600366D87 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CE22AE295EFB6F0078A6CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +165,7 @@
 				8877D9172966113A00B29F1D /* APIKey.swift */,
 				88549377296608EC00B14B73 /* Extension+Color.swift */,
 				88F0193C2969BDC0006A5826 /* LocationHelper.swift */,
+				88C93C1C296BD70D00366D87 /* AppGroup.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -110,10 +179,36 @@
 			path = TodoDetail;
 			sourceTree = "<group>";
 		};
+		88C93BFB296BD00600366D87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88C93BFC296BD00600366D87 /* WidgetKit.framework */,
+				88C93BFE296BD00600366D87 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88C93C00296BD00600366D87 /* TodoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				88C93C01296BD00600366D87 /* TodoWidgetBundle.swift */,
+				88C93C03296BD00600366D87 /* TodoWidgetLiveActivity.swift */,
+				88C93C05296BD00600366D87 /* TodoWidget.swift */,
+				88C93C28296CFBFE00366D87 /* TodoItemWidgetView.swift */,
+				88C93C07296BD00600366D87 /* TodoWidget.intentdefinition */,
+				88C93C08296BD00700366D87 /* Assets.xcassets */,
+				88C93C0A296BD00700366D87 /* Info.plist */,
+			);
+			path = TodoWidget;
+			sourceTree = "<group>";
+		};
 		88CE22A8295EFB6F0078A6CB = {
 			isa = PBXGroup;
 			children = (
+				88C93C17296BD26D00366D87 /* TodoWidgetExtension.entitlements */,
 				88CE22B3295EFB6F0078A6CB /* DayInfo */,
+				88C93C00296BD00600366D87 /* TodoWidget */,
+				88C93BFB296BD00600366D87 /* Frameworks */,
 				88CE22B2295EFB6F0078A6CB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				88CE22B1295EFB6F0078A6CB /* DayInfo.app */,
+				88C93BFA296BD00600366D87 /* TodoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +225,7 @@
 		88CE22B3295EFB6F0078A6CB /* DayInfo */ = {
 			isa = PBXGroup;
 			children = (
+				88C93C16296BD23E00366D87 /* DayInfo.entitlements */,
 				88F0193E2969CA76006A5826 /* Info.plist */,
 				885493742965ED3C00B14B73 /* Network */,
 				8878A44E29616E46005F7E15 /* Utility */,
@@ -172,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				88CE22DB295F67A40078A6CB /* WeatherModel.swift */,
+				88C93C22296CDA0400366D87 /* CustomPersistenceContorller.swift */,
 				88748AF5296775C7008F7CD5 /* Persistence.swift */,
 				88748AF2296775A2008F7CD5 /* Item.xcdatamodeld */,
 			);
@@ -237,6 +335,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		88C93BF9296BD00600366D87 /* TodoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C93C10296BD00700366D87 /* Build configuration list for PBXNativeTarget "TodoWidgetExtension" */;
+			buildPhases = (
+				88C93BF6296BD00600366D87 /* Sources */,
+				88C93BF7296BD00600366D87 /* Frameworks */,
+				88C93BF8296BD00600366D87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodoWidgetExtension;
+			productName = TodoWidgetExtension;
+			productReference = 88C93BFA296BD00600366D87 /* TodoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		88CE22B0295EFB6F0078A6CB /* DayInfo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88CE22BF295EFB700078A6CB /* Build configuration list for PBXNativeTarget "DayInfo" */;
@@ -244,10 +359,12 @@
 				88CE22AD295EFB6F0078A6CB /* Sources */,
 				88CE22AE295EFB6F0078A6CB /* Frameworks */,
 				88CE22AF295EFB6F0078A6CB /* Resources */,
+				88C93C13296BD00700366D87 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				88C93C0E296BD00700366D87 /* PBXTargetDependency */,
 			);
 			name = DayInfo;
 			packageProductDependencies = (
@@ -269,6 +386,9 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					88C93BF9296BD00600366D87 = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					88CE22B0295EFB6F0078A6CB = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -281,6 +401,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 88CE22A8295EFB6F0078A6CB;
 			packageReferences = (
@@ -293,11 +414,20 @@
 			projectRoot = "";
 			targets = (
 				88CE22B0295EFB6F0078A6CB /* DayInfo */,
+				88C93BF9296BD00600366D87 /* TodoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		88C93BF8296BD00600366D87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C93C09296BD00700366D87 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CE22AF295EFB6F0078A6CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +440,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		88C93BF6296BD00600366D87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C93C1E296BD70D00366D87 /* AppGroup.swift in Sources */,
+				88C93C04296BD00600366D87 /* TodoWidgetLiveActivity.swift in Sources */,
+				88C93C24296CDA0400366D87 /* CustomPersistenceContorller.swift in Sources */,
+				88C93C02296BD00600366D87 /* TodoWidgetBundle.swift in Sources */,
+				88C93C14296BD12700366D87 /* Item.xcdatamodeld in Sources */,
+				88C93C19296BD43F00366D87 /* Constant.swift in Sources */,
+				88C93C1A296BD45600366D87 /* WeatherModel.swift in Sources */,
+				88C93C15296BD12C00366D87 /* Persistence.swift in Sources */,
+				88C93C0B296BD00700366D87 /* TodoWidget.intentdefinition in Sources */,
+				88C93C1B296BD46700366D87 /* Extension+Color.swift in Sources */,
+				88C93C18296BD40D00366D87 /* TodoItemView.swift in Sources */,
+				88C93C2A296CFBFE00366D87 /* TodoItemWidgetView.swift in Sources */,
+				88C93C06296BD00600366D87 /* TodoWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CE22AD295EFB6F0078A6CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +471,7 @@
 				885493732965EC7C00B14B73 /* WeatherAPIService.swift in Sources */,
 				88748AF6296775C7008F7CD5 /* Persistence.swift in Sources */,
 				88CE22B7295EFB6F0078A6CB /* HomeView.swift in Sources */,
+				88C93C29296CFBFE00366D87 /* TodoItemWidgetView.swift in Sources */,
 				88F0193D2969BDC0006A5826 /* LocationHelper.swift in Sources */,
 				88DC7F2D2961AB6400401BB9 /* ColorGridView.swift in Sources */,
 				8878A45629618103005F7E15 /* DayView.swift in Sources */,
@@ -328,7 +479,9 @@
 				88F0193A2969B721006A5826 /* SettingLabelView.swift in Sources */,
 				88549378296608EC00B14B73 /* Extension+Color.swift in Sources */,
 				8878A45829618255005F7E15 /* CoverView.swift in Sources */,
+				88C93C23296CDA0400366D87 /* CustomPersistenceContorller.swift in Sources */,
 				88748AF4296775A2008F7CD5 /* Item.xcdatamodeld in Sources */,
+				88C93C1D296BD70D00366D87 /* AppGroup.swift in Sources */,
 				885493762965FAEF00B14B73 /* TodoGridItemView.swift in Sources */,
 				885493702965EC3200B14B73 /* WeatherAPI.swift in Sources */,
 				88CE22D1295F04100078A6CB /* TodoItemView.swift in Sources */,
@@ -336,13 +489,80 @@
 				8878A45B29618986005F7E15 /* TodoDetailView.swift in Sources */,
 				88F0193229689BBE006A5826 /* AddTodoView.swift in Sources */,
 				88CE22DC295F67A40078A6CB /* WeatherModel.swift in Sources */,
+				88C93C0C296BD00700366D87 /* TodoWidget.intentdefinition in Sources */,
 				8878A45029617414005F7E15 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		88C93C0E296BD00700366D87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88C93BF9296BD00600366D87 /* TodoWidgetExtension */;
+			targetProxy = 88C93C0D296BD00700366D87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		88C93C11296BD00700366D87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TodoWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH36BYYATY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TodoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryuyeon.SimpleTodo.TodoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88C93C12296BD00700366D87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TodoWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH36BYYATY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TodoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryuyeon.SimpleTodo.TodoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		88CE22BD295EFB700078A6CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -393,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -447,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -460,8 +680,10 @@
 		88CE22C0295EFB700078A6CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DayInfo/DayInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DayInfo/Preview Content\"";
@@ -495,8 +717,10 @@
 		88CE22C1295EFB700078A6CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DayInfo/DayInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DayInfo/Preview Content\"";
@@ -530,6 +754,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		88C93C10296BD00700366D87 /* Build configuration list for PBXNativeTarget "TodoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C93C11296BD00700366D87 /* Debug */,
+				88C93C12296BD00700366D87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		88CE22AC295EFB6F0078A6CB /* Build configuration list for PBXProject "DayInfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

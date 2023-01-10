@@ -12,11 +12,11 @@ struct PersistenceController {
     static let shared = PersistenceController()
 
     // MARK: - 2. PERSISTENT CONTAINER
-    let container: NSPersistentContainer
+    let container: NSCustomPersistentController
     
     // MARK: - INITIALIZATION (load the persistent store)
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Item")
+        container = NSCustomPersistentController(name: "Item")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
