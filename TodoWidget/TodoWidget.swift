@@ -120,7 +120,6 @@ struct TodoWidgetEntryView : View {
                         }
                     }
                     .frame(width: 140, height: 120)
-                    .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
                     .shadow(color: .black.opacity(0.25), radius: 3, x: 3, y: 2)
