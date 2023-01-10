@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PopupView
+import WidgetKit
 
 struct AddTodoView: View {
     @State private var title = ""
@@ -84,6 +85,7 @@ struct AddTodoView: View {
                     newItem.done = task
                     newItem.id = UUID()
                     try? self.contextView.save()
+                    WidgetCenter.shared.reloadAllTimelines()
                     self.presentation.wrappedValue.dismiss()
                 } else {
                     showAlert = true

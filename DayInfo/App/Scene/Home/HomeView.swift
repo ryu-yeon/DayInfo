@@ -8,6 +8,7 @@
 import SwiftUI
 
 import Combine
+import WidgetKit
 
 struct HomeView: View {
     // MARK: - PROPERTIES
@@ -42,6 +43,7 @@ struct HomeView: View {
 
             do {
                 try viewContext.save()
+                WidgetCenter.shared.reloadAllTimelines()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -54,6 +56,7 @@ struct HomeView: View {
             offsets.map { todos[$0] }.forEach(viewContext.delete)
             do {
                 try viewContext.save()
+                WidgetCenter.shared.reloadAllTimelines()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -159,9 +162,6 @@ struct HomeView: View {
                     }
                 }
             }
-        }
-        .onAppear {
-//            todoList = Array(todos)
         }
         .accentColor(.black)
     }

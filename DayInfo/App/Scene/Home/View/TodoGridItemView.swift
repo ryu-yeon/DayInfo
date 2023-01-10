@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TodoGridItemView: View {
     
@@ -23,6 +24,7 @@ struct TodoGridItemView: View {
                 .padding(.leading, 12)
                 .onTapGesture {
                     todo.done.toggle()
+                    WidgetCenter.shared.reloadAllTimelines()
                     try? self.viewContext.save()
                     feedback.impactOccurred()
                 }
