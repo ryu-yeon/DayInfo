@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PopupView
+import WidgetKit
 
 struct DayView: View {
     
@@ -29,6 +30,7 @@ struct DayView: View {
             newItem.icon = ""
             do {
                 try viewContext.save()
+                WidgetCenter.shared.reloadAllTimelines()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -41,6 +43,7 @@ struct DayView: View {
             offsets.map { anniversaries[$0] }.forEach(viewContext.delete)
             do {
                 try viewContext.save()
+                WidgetCenter.shared.reloadAllTimelines()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -87,6 +90,7 @@ struct DayView: View {
                         newItem.title = title
                         newItem.date = date
                         newItem.icon = ""
+                        WidgetCenter.shared.reloadAllTimelines()
                         try? self.viewContext.save()
                         showMakeAlert = false
                     }
@@ -100,17 +104,18 @@ struct DayView: View {
                 .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
                 .popup(isPresented: $showPopup, type: .floater(verticalPadding: 20), position: .top, animation: .spring(), autohideIn: 1, closeOnTap: true, closeOnTapOutside: true, view: {
                     
-                    Text("제목을 입력해주세요.")
+                    Text("디데이를 입력해주세요.")
                         .padding(8)
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
                 })
             }
+            .padding(.bottom, 16)
 
         }
         .padding()
-        .frame(width: 320, height: 150)
+        .frame(width: 320, height: 170)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .background(RoundedRectangle(cornerRadius: 12).stroke(Color.gray ,lineWidth: 3))
