@@ -19,8 +19,8 @@ let basicColor = [
 let feedback = UIImpactFeedbackGenerator(style: .medium)
 
 func calculateDate(date: Date) -> String {
-    let interval = Date().timeIntervalSince(date)
-    let days = Int(floor(interval / 86400))
+
+    let days = Int(floor(date.timeIntervalSince1970 / 86400) - floor(Date().timeIntervalSince1970 / 86400))
     
     if days > 0 {
         return "D+\(days)"
