@@ -36,7 +36,7 @@ struct SettingView: View {
                 SettingRowView(name: "Developer", content: "yeontak ryu")
                 SettingRowView(name: "Compatibility", content: "iOS 16")
                 SettingRowView(name: "SwiftUI", content: "2.0")
-                SettingRowView(name: "Version", content: "1.0")
+                SettingRowView(name: "Version", content: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)
                 Divider()
                 Text("Copyright 2023. yeontak ryu all rights reserved.")
                     .font(.footnote)
