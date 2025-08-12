@@ -12,6 +12,6 @@ class Test {
     let number: Int
     
     func applePay() {
-        let review: Int = 0
+        let review: Int = 1
     }
 }
