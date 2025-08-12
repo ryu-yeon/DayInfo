@@ -9,4 +9,5 @@ import Foundation
 
 class Test {
     let text: String
+    let number: Int
 }
