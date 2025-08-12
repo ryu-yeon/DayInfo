@@ -1,2 +1,6 @@
 .DS_Store
 APIKey.swift
+# Xcode user-specific
+**/*.xcuserstate
+**/xcuserdata/
+**/*.xcscmblueprint
