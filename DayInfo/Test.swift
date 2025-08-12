@@ -14,4 +14,8 @@ class Test {
     func appleLogin() {
         
     }
+    
+    func goolgeLogin() {
+        let google = "!!!"
+    }
 }
