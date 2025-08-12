@@ -21,6 +21,7 @@
 		8878A45629618103005F7E15 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A45529618103005F7E15 /* DayView.swift */; };
 		8878A45829618255005F7E15 /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A45729618255005F7E15 /* CoverView.swift */; };
 		8878A45B29618986005F7E15 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878A45A29618986005F7E15 /* TodoDetailView.swift */; };
+		88A291EB2E4B1D47001DD06E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A291EA2E4B1D47001DD06E /* Test.swift */; };
 		88C93BFD296BD00600366D87 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C93BFC296BD00600366D87 /* WidgetKit.framework */; };
 		88C93BFF296BD00600366D87 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C93BFE296BD00600366D87 /* SwiftUI.framework */; };
 		88C93C02296BD00600366D87 /* TodoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C93C01296BD00600366D87 /* TodoWidgetBundle.swift */; };
@@ -96,6 +97,7 @@
 		8878A45529618103005F7E15 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		8878A45729618255005F7E15 /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		8878A45A29618986005F7E15 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
+		88A291EA2E4B1D47001DD06E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		88C93BFA296BD00600366D87 /* TodoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C93BFC296BD00600366D87 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		88C93BFE296BD00600366D87 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -233,6 +235,7 @@
 				88CE22C2295EFB820078A6CB /* App */,
 				88CE22B8295EFB700078A6CB /* Assets.xcassets */,
 				88CE22BA295EFB700078A6CB /* Preview Content */,
+				88A291EA2E4B1D47001DD06E /* Test.swift */,
 			);
 			path = DayInfo;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				8878A45829618255005F7E15 /* CoverView.swift in Sources */,
 				88C93C23296CDA0400366D87 /* CustomPersistenceContorller.swift in Sources */,
 				88748AF4296775A2008F7CD5 /* Item.xcdatamodeld in Sources */,
+				88A291EB2E4B1D47001DD06E /* Test.swift in Sources */,
 				88C93C1D296BD70D00366D87 /* AppGroup.swift in Sources */,
 				885493762965FAEF00B14B73 /* TodoGridItemView.swift in Sources */,
 				885493702965EC3200B14B73 /* WeatherAPI.swift in Sources */,
@@ -513,7 +517,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodoWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1200;
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoWidget/Info.plist;
@@ -544,7 +548,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodoWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1200;
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoWidget/Info.plist;
@@ -690,7 +694,7 @@
 				CODE_SIGN_ENTITLEMENTS = DayInfo/DayInfo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1200;
 				DEVELOPMENT_ASSET_PATHS = "\"DayInfo/Preview Content\"";
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				ENABLE_PREVIEWS = YES;
@@ -732,7 +736,7 @@
 				CODE_SIGN_ENTITLEMENTS = DayInfo/DayInfo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1200;
 				DEVELOPMENT_ASSET_PATHS = "\"DayInfo/Preview Content\"";
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				ENABLE_PREVIEWS = YES;
