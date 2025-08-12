@@ -11,7 +11,7 @@ class Test {
     let text: String
     let number: Int
     
-    func appleLogin() {
+    func applePay() {
         
     }
 }
