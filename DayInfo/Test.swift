@@ -19,7 +19,15 @@ class Test {
         
     }
     
+    func kakaoLogin() {
+        let test = 1
+    }
+    
     func goolgeLogin() {
         let google = "!!!"
+    }
+
+    func naverLogin() {
+        
     }
 }
