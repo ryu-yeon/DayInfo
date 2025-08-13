@@ -14,4 +14,8 @@ class Test {
     func applePay() {
         let review: Int = 1
     }
+    
+    func goolgeLogin() {
+        let google = "!!!"
+    }
 }
