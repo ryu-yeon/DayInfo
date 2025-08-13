@@ -15,7 +15,15 @@ class Test {
         let review: Int = 1
     }
     
+    func kakaoLogin() {
+        let test = 1
+    }
+    
     func goolgeLogin() {
         let google = "!!!"
+    }
+
+    func naverLogin() {
+        
     }
 }
